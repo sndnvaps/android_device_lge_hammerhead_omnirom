@@ -23,6 +23,9 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Use specific resolution for bootanimation
+TARGET_BOOTANIMATION_SIZE := 1080x608
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
@@ -41,4 +44,4 @@ TARGET_KERNEL_CONFIG := custom_hammerhead_defconfig
 TARGET_VARIANT_CONFIG := custom_hammerhead_defconfig
 TARGET_SELINUX_CONFIG := custom_hammerhead_defconfig
 
-$(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/hammerhead/lge/hammerhead/device-vendor.mk)
